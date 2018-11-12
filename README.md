@@ -1,5 +1,7 @@
 # jenkinsfile-test-pipeline
-Testing a Fake app on Jenkins
+Test jenkins environment, using docker.
+
+Sets up a Graphana, InfluxDB and Jenkins container.
 
 ## Running
 Build

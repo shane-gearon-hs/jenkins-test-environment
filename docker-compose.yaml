@@ -6,6 +6,11 @@ services:
      - "8080:8080"
     environment:
      - "JAVA_OPTS=-Djenkins.install.runSetupWizard=false"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ../github-autostatus-plugin/target/github-autostatus.hpi:/var/jenkins_home/plugins/github-autostatus.hpi
+      - ../github-autostatus-plugin/target/github-autostatus.hpi:/var/jenkins_home/plugins/github-autostatus.jpi
+    privileged: true
   influx:
     image: "influxdb"
     ports: 

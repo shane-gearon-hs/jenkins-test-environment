@@ -26,6 +26,21 @@ This will have your environment up and running, access the services with the bel
 - [Jenkins](http://localhost:8080/)
 - [Grafana](http://localhost:3000/)
 
+## Setup
+### Jenkins
+Once in Jenkins you need to go to http://localhost:8080/configure and select "Send to Influx", then type in 'http://influx:8086' as the URL and 'jenkins-metrics' as the database. Leave credentials and retention policy blank. (TODO: Automate this)
+
+### Influx
+Create the database:
+```
+docker exec jenkins-test-environment_influx_1 influx -execute "create database \"jenkins-metrics\""
+```
+
+### Graphana
+Load the Graphana dashboard with the password `admin` and username `admin`.
+Add a datasource of type Influx DB then type in 'http://influx:8086' as the URL and 'jenkins-metrics' as the database.
+Import database `5786` on the 'http://localhost:3000/dashboard/import' page.
+
 ## Plugins
 
 These are the main plugins used in this project. Dependencies are also required, see plugins.txt for full list.

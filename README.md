@@ -29,7 +29,7 @@ This will have your environment up and running, access the services with the bel
 ## Setup
 ### Jenkins
 1. Once in Jenkins you need to go to http://localhost:8080/configure and select "Send to Influx", then type in 'http://influx:8086' as the URL and 'jenkins-metrics' as the database. Leave credentials and retention policy blank. (TODO: Automate this)
-2. To enable statsd, you also can select "Send to StatsD", then type in 'statsd' as the endpoint and 'service.jenkins_kubernetes.metrics.' as the bucket. Leave port and max size at their default values. (TODO: Automate this)
+2. To enable statsd, you also can select "Send to StatsD", then type in 'statsd' as the endpoint and 'service.jenkins_kubernetes.metrics' as the bucket. Leave port and max size at their default values. (TODO: Automate this)
 
 ### Influx
 Create the database:

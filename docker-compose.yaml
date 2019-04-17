@@ -8,8 +8,6 @@ services:
      - "JAVA_OPTS=-Djenkins.install.runSetupWizard=false"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ../github-autostatus-plugin/target/github-autostatus.hpi:/var/jenkins_home/plugins/github-autostatus.hpi
-      - ../github-autostatus-plugin/target/github-autostatus.hpi:/var/jenkins_home/plugins/github-autostatus.jpi
     privileged: true
   influx:
     image: "influxdb"
@@ -20,10 +18,9 @@ services:
     ports: 
       - "3000:3000"
   statsd:
-    image: "hopsoft/graphite-statsd"
+    image: "graphiteapp/graphite-statsd"
     ports: 
-      # - "80:80" Enable to use Grafana from the statsd image (older version)
-      - "81:81"
+      - "80:80"
       - "2003-2004:2003-2004"
       - "2023-2024:2023-2024"
       - "8125:8125/udp"

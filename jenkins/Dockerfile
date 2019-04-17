@@ -23,5 +23,5 @@ RUN usermod -aG docker jenkins
 COPY plugins.txt /usr/share/jenkins/ref/plugins.txt
 RUN /usr/local/bin/install-plugins.sh < /usr/share/jenkins/ref/plugins.txt
 
-# Manually add the plugins
-COPY usr/share/jenkins/ref/plugins/github-autostatus.hpi /usr/share/jenkins/ref/plugins/github-autostatus.hpi
+# Config Override
+COPY usr/share/jenkins/ref/org.jenkinsci.plugins.githubautostatus.BuildStatusConfig.xml /usr/share/jenkins/ref/org.jenkinsci.plugins.githubautostatus.BuildStatusConfig.xml.override

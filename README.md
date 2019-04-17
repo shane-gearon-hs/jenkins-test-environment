@@ -37,10 +37,12 @@ Create the database:
 docker exec jenkins-test-environment_influx_1 influx -execute "create database \"jenkins-metrics\""
 ```
 
-### Graphana
-Load the Graphana dashboard with the password `admin` and username `admin`.
-Add a datasource of type Influx DB then type in 'http://influx:8086' as the URL and 'jenkins-metrics' as the database.
-Import database `5786` on the 'http://localhost:3000/dashboard/import' page.
+### Grafana
+Load the Grafana [dashboard](http://localhost:3000/) with the password `admin` and username `admin`.
+1. Add a datasource of type Influx DB then type in 'http://influx:8086' as the URL and 'jenkins-metrics' as the database.
+2. Add a datasource of type Graphite then type in 'http://statsd:80' as the URL.
+
+Import dashboard `5786` on the [import](http://localhost:3000/dashboard/import) page. (Only supports Influx Data)
 
 
 ## Plugins

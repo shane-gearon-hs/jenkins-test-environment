@@ -1,0 +1,14 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<org.jenkinsci.plugins.githubautostatus.BuildStatusConfig plugin="github-autostatus@3.2">
+  <credentialsId></credentialsId>
+  <influxDbUrl>http://influx:8086</influxDbUrl>
+  <influxDbDatabase>jenkins-metrics</influxDbDatabase>
+  <influxDbRetentionPolicy></influxDbRetentionPolicy>
+  <enableInfluxDb>true</enableInfluxDb>
+  <disableGithub>true</disableGithub>
+  <enableStatsd>true</enableStatsd>
+  <statsdHost>statsd</statsdHost>
+  <statsdPort>8125</statsdPort>
+  <statsdBucket>service.jenkins.metrics</statsdBucket>
+  <statsdMaxSize>1400</statsdMaxSize>
+</org.jenkinsci.plugins.githubautostatus.BuildStatusConfig>

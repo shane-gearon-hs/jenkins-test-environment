@@ -1,13 +1,19 @@
 pipeline {
     stages {
         stage("Build") {
-            sh "echo PASS"
+            steps {
+                sh "echo PASS"
+            }
         }
         stage("Test") {
-            sh "echo TEST PASS"
+            steps {
+                sh "echo TEST PASS"
+            }
         }
         stage("Deploy") {
-            sh "fail"
+            steps {
+                sh "fail"
+            }
         }
     }
 }

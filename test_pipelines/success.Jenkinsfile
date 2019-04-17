@@ -7,7 +7,7 @@ pipeline {
             sh "echo TEST PASS"
         }
         stage("Deploy") {
-            sh "fail"
+            sh "echo DEPLOY PASS"
         }
     }
 }
